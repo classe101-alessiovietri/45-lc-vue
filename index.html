@@ -3,12 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Template HTML CSS JS</title>
+        <title>Recap Vue</title>
 
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+
+        <div id="app">
+            <h1>
+                {{ name }}
+            </h1>
+            <h2>
+                Composta da {{ studentsNumber }} studenti
+            </h2>
+            <h3 v-bind:id="bon.lastName" :class="'classe-' + bon.firstName">
+                In questa classe c'è {{ bon.firstName }} {{ bon.lastName }}
+            </h3>
+
+            <div>
+                <input type="text" v-model="name">
+                <input type="text" v-model="bon.firstName">
+                <input type="text" v-model="bon.lastName">
+                <input type="number" v-model="studentsNumber">
+            </div>
+
+            <div>
+                <button @click="gestisciStoClick();" v-on:mouseenter="sopraAlBottone()">
+                    Cliccami
+                </button>
+            </div>
+        </div>
         
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="js/scripts.js" type="text/javascript"></script>
     </body>
 </html>
